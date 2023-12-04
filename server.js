@@ -9,8 +9,12 @@ app.use('/recipes', articleRouter);
 app.get('/', (req, res) => {
     const recipes = [{
         title: 'Test Article',
-        createdAt: Date.now(),
+        createdAt: new Date(),
         description: 'Test description'
+    }, {
+        title: 'Test Article 2',
+        createdAt: new Date(),
+        description: 'Test description 2'
     }];
     res.render('index', { recipes : recipes});
 })

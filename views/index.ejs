@@ -8,8 +8,21 @@
 </head>
 <body>
     <div class="container">
-        <h1>Recipes</h1>
-        <a href="/articles/new" class="btn btn-success">New Article</a>
+        <h1 class="mb-4">Recipes</h1>
+        <a href="/recipes/new" class="btn btn-success">New Article</a>
+        <% recipes.forEach(recipe => { %>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h4 class="card-title"><%= recipe.title %></h4>
+                    <div class="card-subtitle text-muted mb-2">
+                        <%= recipe.createdAt.toLocaleDateString() %>
+                    </div>
+                </div>
+            </div>
+
+        <% }) %>
+
     </div>
+
 </body>
 </html>
