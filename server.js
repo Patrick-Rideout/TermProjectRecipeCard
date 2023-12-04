@@ -16,7 +16,9 @@ app.get('/', (req, res) => {
         createdAt: new Date(),
         description: 'Test description 2'
     }];
-    res.render('index', { recipes : recipes});
+    res.render('recipes/index', { recipes : recipes});
 })
+
+
 
 app.listen(4000);
