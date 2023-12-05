@@ -20,7 +20,10 @@
                     <div class="card-text mb-2">
                         <%= recipe.description %>
                     </div>
-                    <a class="btn btn-primary" href="recipes/<%= recipe.id%>">Read More</a>
+                    <a class="btn btn-primary" href="recipes/<%= recipe.slug%>">Read More</a>
+                    <form action="/recipes/<%= recipe.id %>?_method=DELETE" method="POST" class="d-inline">
+                        <button type="submit" class="btn btn-danger">DELETE</button>
+                    </form>
                 </div>
             </div>
 

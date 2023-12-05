@@ -15,7 +15,7 @@
             <%= recipe.createdAt.toLocaleDateString() %>
         </div>
         <a href="/" class="btn btn-secondary">All Recipes</a>
-        <a href="/recipes/edit/<%= recipe.id %>" class="btn btn-info">Edit</a>
+        <a href="/recipes/edit/<%= recipe.slug %>" class="btn btn-info">Edit</a>
         
         <div>
             <%= recipe.markdown %>
