@@ -8,18 +8,10 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mb-1">
-            <%= recipe.title %>
-        </h1>
-        <div class="text-muted mb-2">
-            <%= recipe.createdAt.toLocaleDateString() %>
-        </div>
-        <a href="/" class="btn btn-secondary">All Recipes</a>
-        <a href="/recipes/edit/<%= recipe.id %>" class="btn btn-info">Edit</a>
-        
-        <div>
-            <%- recipe.sanitizedHtml %>
-        </div>
-    </div>
+        <h1 class="mb-4">Edit Recipe</h1>
+        <form action="/recipes/<%= recipe.id %>?_method=PUT" method="POST">
+          <%- include('_form_fields') %>
+        </form>
+      </div>
 </body>
 </html>
