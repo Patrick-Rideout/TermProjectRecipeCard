@@ -23,6 +23,7 @@ router.post('/', async (req, res) => {
         res.redirect(`/recipes/${recipe.slug}`)
     } catch(e) {
         res.render('recipes/new', {recipe: recipe})
+        console.log(e)
     }
 })
 

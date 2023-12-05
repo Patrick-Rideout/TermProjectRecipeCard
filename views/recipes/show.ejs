@@ -18,7 +18,7 @@
         <a href="/recipes/edit/<%= recipe.slug %>" class="btn btn-info">Edit</a>
         
         <div>
-            <%= recipe.markdown %>
+            <%- recipe.sanitizedHtml %>
         </div>
     </div>
 </body>
