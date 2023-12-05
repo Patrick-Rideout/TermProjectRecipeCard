@@ -3,8 +3,8 @@ const Recipe = require('./../models/recipe');
 const router = express.Router();
 
 router.get('/new', (req, res) => {
-    res.render("recipes/new")
-})
+    res.render('recipes/new', { recipe: new Recipe() });
+});
 
 router.get('/:id', (req, res) => {
 
