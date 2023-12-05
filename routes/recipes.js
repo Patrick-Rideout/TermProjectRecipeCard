@@ -6,12 +6,14 @@ router.get('/new', (req, res) => {
     res.render('recipes/new', { recipe: new Recipe() });
 });
 
-router.get('/:id', (req, res) => {
-
+router.get('/:id', async (req, res) => {
+    const recipe = await Recipe.findById(req.params.id)
+    if (recipe == null) res.redirect('/')
+    res.render('recipes/show', {recipe: recipe})
 })
 
 router.post('/', async (req, res) => {
-    const recipe = new Recipe({
+    let recipe = new Recipe({
         title: req.body.title,
         description: req.body.description,
         markdown: req.body.markdown,
