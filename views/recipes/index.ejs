@@ -21,6 +21,7 @@
                         <%= recipe.description %>
                     </div>
                     <a class="btn btn-primary" href="recipes/<%= recipe.slug%>">Read More</a>
+                    <a href="recipes/edit/<%= recipe.id %>" class="btn btn-info">Edit</a>
                     <form action="/recipes/<%= recipe.id %>?_method=DELETE" method="POST" class="d-inline">
                         <button type="submit" class="btn btn-danger">DELETE</button>
                     </form>
