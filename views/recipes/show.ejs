@@ -13,12 +13,15 @@
         </h1>
         <div class="text-muted mb-2">
             <%= recipe.createdAt.toLocaleDateString() %>
+            <%= recipe.difficulty %>
         </div>
         <a href="/" class="btn btn-secondary">All Recipes</a>
         <a href="/recipes/edit/<%= recipe.id %>" class="btn btn-info">Edit</a>
-        
         <div>
-            <%- recipe.sanitizedHtml %>
+            <%- recipe.sanitizedIngredients %>
+        </div>
+        <div>
+            <%- recipe.sanitizedInstructions %>
         </div>
     </div>
 </body>

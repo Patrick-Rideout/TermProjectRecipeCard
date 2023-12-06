@@ -1,15 +1,22 @@
 <div class="form-group">
     <label for="title">Title</label>
     <input required value="<%= recipe.title %>" type="text" name="title" id="title" class="form-control">
-
+</div>
+<div class="form-group">
+    <label for="difficulty">difficulty</label>
+    <input required value="<%= recipe.difficulty %>" type="text" name="difficulty" id="difficulty" class="form-control">
 </div>
 <div class="form-group">
     <label for="description">Description</label>
     <textarea name="description" id="description" class="form-control"><%= recipe.description %></textarea>    
 </div>
 <div class="form-group">
-    <label for="markdown">Markdown</label>
-    <textarea required name="markdown" id="markdown" class="form-control"><%= recipe.markdown %></textarea>
+    <label for="ingredients">Ingredients</label>
+    <textarea required name="ingredients" id="ingredients" class="form-control"><%= recipe.ingredients %></textarea>
+</div>
+<div class="form-group">
+    <label for="instructions">Instructions</label>
+    <textarea required name="instructions" id="instructions" class="form-control"><%= recipe.instructions %></textarea>
 </div>
 <a href="/" class="btn btn-secondary">Cancel</a>
 <button type="submit" class="btn btn-primary">Save</button>

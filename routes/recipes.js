@@ -41,8 +41,10 @@ function saveRecipeAndRedirect(path) {
     return async (req, res) => {
       let recipe = req.recipe
       recipe.title = req.body.title
+      recipe.difficulty = req.body.difficulty
       recipe.description = req.body.description
-      recipe.markdown = req.body.markdown
+      recipe.ingredients = req.body.ingredients
+      recipe.instructions = req.body.instructions
       try {
         recipe = await recipe.save()
         res.redirect(`/recipes/${recipe.slug}`)

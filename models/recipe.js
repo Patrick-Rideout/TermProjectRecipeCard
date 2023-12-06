@@ -10,12 +10,19 @@ const recipeSchema = new mongoose.Schema({
       type: String,
       required: true
     },
-    description: {
+    difficulty: {
       type: String
     },
-    markdown: {
+    description: {
+        type: String
+      },
+    ingredients: {
       type: String,
       required: true
+    },
+    instructions: {
+        type: String,
+        required: true
     },
     createdAt: {
       type: Date,
@@ -26,7 +33,11 @@ const recipeSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    sanitizedHtml: {
+    sanitizedIngredients: {
+        type: String,
+        required: true
+    },
+    sanitizedInstructions: {
         type: String,
         required: true
     }
@@ -36,8 +47,11 @@ recipeSchema.pre('validate', function(next) {
     if (this.title) {
       this.slug = slugify(this.title, { lower: true, strict: true })
     }
-    if (this.markdown) {
-        this.sanitizedHtml = dompurify.sanitize(marked.parse(this.markdown))
+    if (this.ingredients) {
+        this.sanitizedIngredients = dompurify.sanitize(marked.parse(this.ingredients))
+    }
+    if (this.instructions) {
+        this.sanitizedInstructions = dompurify.sanitize(marked.parse(this.instructions))
     }
     next()
   })

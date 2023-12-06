@@ -15,7 +15,10 @@
                 <div class="card-body">
                     <h4 class="card-title"><%= recipe.title %></h4>
                     <div class="card-subtitle text-muted mb-2">
+                        <b>Date Added:</b>
                         <%= recipe.createdAt.toLocaleDateString() %>
+                        <b>Difficulty:</b>
+                        <%= recipe.difficulty %>
                     </div>
                     <div class="card-text mb-2">
                         <%= recipe.description %>
