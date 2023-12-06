@@ -4,7 +4,7 @@ const Article = require('./models/recipe')
 const articleRouter = require('./routes/recipes')
 const methodOverride = require('method-override')
 const app = express();
-
+ 
 mongoose.connect('mongodb://localhost/blog')
 
 app.set('view engine', 'ejs');
@@ -21,4 +21,4 @@ app.get('/', async (req, res) => {
 
 app.use('/recipes', articleRouter);
 
-app.listen(4001);
+app.listen(4000);
