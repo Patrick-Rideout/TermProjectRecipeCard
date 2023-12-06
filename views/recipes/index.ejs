@@ -8,8 +8,34 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mb-4">Recipes</h1>
-        <a href="/recipes/new" class="btn btn-success">New Recipe</a>
+        <h1 class="mb-4 text-center pt-3">Recipes</h1>
+        <hr>
+        <div class="row g-1 justify-content-center">
+            <div class="col-auto">
+                <label for="difficulty" class="font-weight-bold">Difficulty</label>
+                <select id="difficulty" class="form-select rounded" style="width: 100px; height: 40px;">
+                    <option value="any">Any</option>
+                    <option value="easy">Easy</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <label for="category" class="font-weight-bold">Category</label>
+                <select id="category" class="form-select rounded" style="width: 100px; height: 40px;">
+                    <option value="any">Any</option>
+                    <option value="dessert">Dessert</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <a href="/recipes/new" class="btn btn-primary" style="width: 100px; height: 40px;">Search</a>
+            </div>
+        </div>
+        <div class="card mt-4">
+            <a href="/recipes/new" class="btn btn-success">New Recipe</a>
+        </div>
         <% recipes.forEach(recipe => { %>
             <div class="card mt-4">
                 <div class="card-body">
