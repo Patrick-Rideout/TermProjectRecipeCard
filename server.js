@@ -16,15 +16,11 @@ app.use(methodOverride('_method'))
 
 
 app.get('/', async (req, res) => {
-    
     const recipes = await Recipe.find().sort({ title: 'asc'})
-    
     res.render('recipes/index', { recipes : recipes});
 })
 
 app.get('/search', async (req, res) => {
-    
-    
     const { difficulty, category } = req.query;
     console.log(difficulty);
     console.log(category);
