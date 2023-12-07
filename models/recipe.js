@@ -13,6 +13,9 @@ const recipeSchema = new mongoose.Schema({
     difficulty: {
       type: String
     },
+    category: {
+      type: String
+    },
     description: {
         type: String
       },

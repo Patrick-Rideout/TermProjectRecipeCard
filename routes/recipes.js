@@ -42,6 +42,7 @@ function saveRecipeAndRedirect(path) {
       let recipe = req.recipe
       recipe.title = req.body.title
       recipe.difficulty = req.body.difficulty
+      recipe.category = req.body.category
       recipe.description = req.body.description
       recipe.ingredients = req.body.ingredients
       recipe.instructions = req.body.instructions
