@@ -22,8 +22,6 @@ app.get('/', async (req, res) => {
 
 app.get('/search', async (req, res) => {
     const { difficulty, category } = req.query;
-    console.log(difficulty);
-    console.log(category);
 
     let query = {};
     if (difficulty !== 'Any' && category !== 'Any') {
@@ -38,8 +36,6 @@ app.get('/search', async (req, res) => {
             query.category = category;
         }
     }
-    console.log(query);
-
     const recipes = await Recipe.find(query).sort({ title: 'asc' });
     res.render('recipes/index', { recipes : recipes});
 });

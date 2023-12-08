@@ -11,27 +11,6 @@ router.get('/edit/:id', async (req, res) => {
     res.render('recipes/edit', { recipe: recipe });
 });
 
-router.get('/search', async (req, res) => {
-    console.log('Hello');
-    // const { difficulty, category } = req.query;
-    // alert('SEARCH');
-    // let query = {};
-    // if (difficulty !== 'any') {
-    //     query.difficulty = difficulty;
-    // }
-    // if (category !== 'any') {
-    //     query.category = category;
-    // }
-
-    // try {
-    //     const recipes = await Recipe.find(query).sort({ title: 'asc' });
-    //     res.render('recipes/index', { recipes: recipes });
-    // } catch (err) {
-    //     res.status(500).send('Error fetching recipes');
-    // }
-});
-
-
 router.get('/:slug', async (req, res) => {
     try {
         const recipe = await Recipe.findOne({slug: req.params.slug})
